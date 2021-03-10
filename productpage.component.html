@@ -1,0 +1,34 @@
+<p>productpage works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div >
+    <label for="page"><h1>PRODUCTPAGE</h1> </label></div>
+ 
+ <div>
+    <input type="text"   id="NAME" placeholder="PRODUCT NAME"
+    [(ngModel)]="name" name="NAME">
+    <input type="text"  id="PRICE" placeholder="PRICE"
+    [(ngModel)]="price" name="PRICE">
+    <button type="button"(click)="addproduct()">ADD NEW ITEM</button>
+    
+ </div>
+ <div><table class="style">
+
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+ 
+ 
+    <tbody>
+        <tr *ngFor="let item of productpage,let i = index" >
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td> <button (click) = "deleteRow(i)"><i class="fa fa-trash"></i></button></td>
+            
+ 
+        </tr>
+        
+    </tbody>
+ </table></div>
+ 
+ 
+ 
