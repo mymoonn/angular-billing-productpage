@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 
+
 @Component({
   selector: 'app-billing-page',
   templateUrl: './billing-page.component.html',
@@ -12,7 +13,14 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class BillingPageComponent implements OnInit {
-  productname: any = ['mango','banana','apple','orange','pineapple']
+  log = 0;
+    showLog = false;
+
+    onShowLog(){
+         this.showLog = true;
+         return this.log = this.log + 1;
+    }
+
   
   total =0;
   billingpage: any = [];
@@ -33,7 +41,7 @@ export class BillingPageComponent implements OnInit {
 
   }
 
- 
+
 
   constructor() {
     let a = localStorage.getItem('product');
