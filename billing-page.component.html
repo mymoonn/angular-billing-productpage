@@ -1,0 +1,66 @@
+<p>BILLING PAGE WORKS works!</p>
+
+<div>
+  <label for="page">
+    <h1>BILLING PAGE</h1>
+  </label>
+</div>
+
+
+<div>
+
+
+  <div class="new-button"><button type="button" (click)="addproduct()">ADD ITEMS</button></div>
+  
+
+</div>
+<div>
+  <table class="style">
+
+    <th>
+      pname
+
+      <select [(ngModel)]="pname" class="form-control">
+
+        <option>mango</option>
+        <option>banana</option>
+        <option>orange</option>
+        <option>apple</option>
+        <option>pineapple</option>
+        <option *ngFor="let product of productpage" [value]="product.name">{{product.name}}</option>
+
+      </select>
+    </th>
+    <th>Price
+      <select [(ngModel)]="price" class="form-control">
+
+        <option>100</option>
+        <option>200</option>
+        <option>50</option>
+        <option>250</option>
+        <option>150</option>
+        <option *ngFor="let product of productpage" [value]="product.price">{{product.price}}</option>
+
+      </select>
+    </th>
+    <th>QTY <input type="text" id="qty" [(ngModel)]="qty" name="qty"></th>
+    <th>total</th>
+
+
+    <tbody>
+      <tr *ngFor="let item of billingpage">
+        <td>{{item.product}}</td>
+        <td>{{item.price}}</td>
+        <td> {{item.qty}} </td>
+        <td>{{item.total}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+  
+  
+ 
+</div>
+
+<input type="submit" value="save">
