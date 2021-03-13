@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class ProductpageComponent implements OnInit {
       this.productpage.splice(x, 1 );
     }   
   }
-  constructor() {
+  constructor(private router:Router) {
       let a=localStorage.getItem('product');
       if(a){
 this.productpage=JSON.parse(a);
@@ -34,5 +35,8 @@ this.productpage=JSON.parse(a);
 
   ngOnInit(): void {
   }
-
+  goto(link:string)
+  {
+    this.router.navigate(['/',link]);
+  }
 }
